@@ -12,14 +12,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      USERNAME: PranavbalajiGit
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
       - uses: actions/checkout@v4
 
       - name: Generate 3D Contribution Graph
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_USERNAME: PranavbalajiGit   # <-- your GitHub username EXACT
 
       - name: Commit & Push
         run: |
